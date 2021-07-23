@@ -45,3 +45,12 @@ func ToString(value interface{}) string {
 		return fmt.Sprintf("%+v", value)
 	}
 }
+
+// Strings2Interfaces string slice to interface{} slice
+func Strings2Interfaces(vals []string) []interface{} {
+	res := make([]interface{}, len(vals), len(vals))
+	for i, v := range vals {
+		res[i] = v
+	}
+	return res
+}

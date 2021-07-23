@@ -6,45 +6,129 @@ Implementation of various data structures and algorithms in Go.
 
 ## Data Structures
 
-- [Containers](#containers)
-  - [Lists](#lists)
-    - [ArrayList](#arraylist)
-    - [SinglyLinkedList](#singlylinkedlist)
-    - [DoublyLinkedList](#doublylinkedlist)
-  - [Sets](#sets)
-    - [HashSet](#hashset)
-    - [TreeSet](#treeset)
-    - [LinkedHashSet](#linkedhashset)
-  - [Stacks](#stacks)
-    - [LinkedListStack](#linkedliststack)
-    - [ArrayStack](#arraystack)
-  - [Maps](#maps)
-    - [HashMap](#hashmap)
-    - [TreeMap](#treemap)
-    - [LinkedHashMap](#linkedhashmap)
-    - [HashBidiMap](#hashbidimap)
-    - [TreeBidiMap](#treebidimap)
-  - [Trees](#trees)
-    - [RedBlackTree](#redblacktree)
-    - [AVLTree](#avltree)
-    - [BTree](#btree)
-    - [BinaryHeap](#binaryheap)
-- [Functions](#functions)
-    - [Comparator](#comparator)
-    - [Iterator](#iterator)
-      - [IteratorWithIndex](#iteratorwithindex)
-      - [IteratorWithKey](#iteratorwithkey)
-      - [ReverseIteratorWithIndex](#reverseiteratorwithindex)
-      - [ReverseIteratorWithKey](#reverseiteratorwithkey)
-    - [Enumerable](#enumerable)
-      - [EnumerableWithIndex](#enumerablewithindex)
-      - [EnumerableWithKey](#enumerablewithkey)
-    - [Serialization](#serialization)
-      - [JSONSerializer](#jsonserializer)
-      - [JSONDeserializer](#jsondeserializer)
-    - [Sort](#sort)
-    - [Container](#container)
-- [Appendix](#appendix)
+- [GoDS (Go Data Structures)](#gods-go-data-structures)
+	- [Data Structures](#data-structures)
+	- [Containers](#containers)
+		- [Lists](#lists)
+			- [ArrayList](#arraylist)
+			- [SinglyLinkedList](#singlylinkedlist)
+			- [DoublyLinkedList](#doublylinkedlist)
+		- [Sets](#sets)
+			- [HashSet](#hashset)
+			- [TreeSet](#treeset)
+			- [LinkedHashSet](#linkedhashset)
+			- [RedisSet](#redisset)
+		- [Stacks](#stacks)
+			- [LinkedListStack](#linkedliststack)
+			- [ArrayStack](#arraystack)
+			- [RedisStack](#redisstack)
+		- [Maps](#maps)
+			- [HashMap](#hashmap)
+			- [TreeMap](#treemap)
+			- [LinkedHashMap](#linkedhashmap)
+			- [HashBidiMap](#hashbidimap)
+			- [TreeBidiMap](#treebidimap)
+			- [RedisHashMap](#redishashmap)
+		- [Trees](#trees)
+			- [RedBlackTree](#redblacktree)
+			- [AVLTree](#avltree)
+			- [BTree](#btree)
+			- [BinaryHeap](#binaryheap)
+	- [Functions](#functions)
+		- [Comparator](#comparator)
+		- [Iterator](#iterator)
+			- [IteratorWithIndex](#iteratorwithindex)
+			- [IteratorWithKey](#iteratorwithkey)
+			- [ReverseIteratorWithIndex](#reverseiteratorwithindex)
+			- [ReverseIteratorWithKey](#reverseiteratorwithkey)
+		- [Enumerable](#enumerable)
+			- [EnumerableWithIndex](#enumerablewithindex)
+			- [EnumerableWithKey](#enumerablewithkey)
+		- [Serialization](#serialization)
+			- [JSONSerializer](#jsonserializer)
+			- [JSONDeserializer](#jsondeserializer)
+		- [Sort](#sort)
+		- [Container](#container)
+	- [Appendix](#appendix)
+		- [Motivation](#motivation)
+		- [Goals](#goals)
+		- [Testing and Benchmarking](#testing-and-benchmarking)
+		- [Contributing](#contributing)
+		- [License](#license)
+		- [Sponsors](#sponsors)
+	- [<a href="https://www.browserstack.com/?ref=gods"><img src="http://www.hajdarevic.net/browserstack.svg" alt="BrowserStack" width="250"/></a>](#)
+			
+			- [ArrayStack](#arraystack)
+		- [Maps](#maps)
+			- [HashMap](#hashmap)
+			- [TreeMap](#treemap)
+			- [LinkedHashMap](#linkedhashmap)
+			- [HashBidiMap](#hashbidimap)
+			- [TreeBidiMap](#treebidimap)
+		- [Trees](#trees)
+			- [RedBlackTree](#redblacktree)
+			- [AVLTree](#avltree)
+			- [BTree](#btree)
+			- [BinaryHeap](#binaryheap)
+	- [Functions](#functions)
+		- [Comparator](#comparator)
+		- [Iterator](#iterator)
+			- [IteratorWithIndex](#iteratorwithindex)
+			- [IteratorWithKey](#iteratorwithkey)
+			- [ReverseIteratorWithIndex](#reverseiteratorwithindex)
+			- [ReverseIteratorWithKey](#reverseiteratorwithkey)
+		- [Enumerable](#enumerable)
+			- [EnumerableWithIndex](#enumerablewithindex)
+			- [EnumerableWithKey](#enumerablewithkey)
+		- [Serialization](#serialization)
+			- [JSONSerializer](#jsonserializer)
+			- [JSONDeserializer](#jsondeserializer)
+		- [Sort](#sort)
+		- [Container](#container)
+	- [Appendix](#appendix)
+		- [Motivation](#motivation)
+		- [Goals](#goals)
+		- [Testing and Benchmarking](#testing-and-benchmarking)
+		- [Contributing](#contributing)
+		- [License](#license)
+		- [Sponsors](#sponsors)
+	- [<a href="https://www.browserstack.com/?ref=gods"><img src="http://www.hajdarevic.net/browserstack.svg" alt="BrowserStack" width="250"/></a>](#)
+
+			- [ArrayStack](#arraystack)
+		- [Maps](#maps)
+			- [HashMap](#hashmap)
+			- [TreeMap](#treemap)
+			- [LinkedHashMap](#linkedhashmap)
+			- [HashBidiMap](#hashbidimap)
+			- [TreeBidiMap](#treebidimap)
+		- [Trees](#trees)
+			- [RedBlackTree](#redblacktree)
+			- [AVLTree](#avltree)
+			- [BTree](#btree)
+			- [BinaryHeap](#binaryheap)
+	- [Functions](#functions)
+		- [Comparator](#comparator)
+		- [Iterator](#iterator)
+			- [IteratorWithIndex](#iteratorwithindex)
+			- [IteratorWithKey](#iteratorwithkey)
+			- [ReverseIteratorWithIndex](#reverseiteratorwithindex)
+			- [ReverseIteratorWithKey](#reverseiteratorwithkey)
+		- [Enumerable](#enumerable)
+			- [EnumerableWithIndex](#enumerablewithindex)
+			- [EnumerableWithKey](#enumerablewithkey)
+		- [Serialization](#serialization)
+			- [JSONSerializer](#jsonserializer)
+			- [JSONDeserializer](#jsondeserializer)
+		- [Sort](#sort)
+		- [Container](#container)
+	- [Appendix](#appendix)
+		- [Motivation](#motivation)
+		- [Goals](#goals)
+		- [Testing and Benchmarking](#testing-and-benchmarking)
+		- [Contributing](#contributing)
+		- [License](#license)
+		- [Sponsors](#sponsors)
+	- [<a href="https://www.browserstack.com/?ref=gods"><img src="http://www.hajdarevic.net/browserstack.svg" alt="BrowserStack" width="250"/></a>](#)
 
 
 ## Containers
@@ -72,13 +156,16 @@ Containers are either ordered or unordered. All ordered containers provide [stat
 |   | [HashSet](#hashset) | no | no | no | index |
 |   | [TreeSet](#treeset) | yes | yes* | yes | index |
 |   | [LinkedHashSet](#linkedhashset) | yes | yes* | yes | index |
+|   | [RedisSet](#redisset) | yes | no | no | index |
 | [Stacks](#stacks) |
 |   | [LinkedListStack](#linkedliststack) | yes | yes | no | index |
 |   | [ArrayStack](#arraystack) | yes | yes* | no | index |
+|   | [RedisStack](#redisstack) | yes | no | no | index |
 | [Maps](#maps) |
 |   | [HashMap](#hashmap) | no | no | no | key |
 |   | [TreeMap](#treemap) | yes | yes* | yes | key |
 |   | [LinkedHashMap](#linkedhashmap) | yes | yes* | yes | key |
+|   | [RedisHashMap](#redishashmap) | yes | no | no | key |
 |   | [HashBidiMap](#hashbidimap) | no | no | no | key* |
 |   | [TreeBidiMap](#treebidimap) | yes | yes* | yes | key* |
 | [Trees](#trees) |
@@ -326,6 +413,50 @@ func main() {
 }
 ```
 
+#### RedisSet
+
+A [stack](#stacks) based on a [redis set](#https://redis.io/commands#set).
+
+Implements [Set](#sets) interfaces.
+
+You can use this set to expand your application to distributed.
+
+```go
+package main
+
+import (
+	"github.com/alicebob/miniredis/v2"
+	"github.com/go-redis/redis/v8"
+	"github.com/wanmail/gods/sets/rediset"
+)
+
+// RedisSetExample to demonstrate basic usage of RedisSet
+func main() {
+	s, err := miniredis.Run()
+	if err != nil {
+		panic(err)
+	}
+	defer s.Close()
+	client := redis.NewClient(
+		&redis.Options{
+			Addr: s.Addr(),
+		},
+	)
+	set := rediset.New(client, "test") // empty (keys are of type int)
+	set.Add(1)                         // 1
+	set.Add(2, 2, 3, 4, 5)             // 3, 1, 2, 4, 5 (random order, duplicates ignored)
+	set.Remove(4)                      // 5, 3, 2, 1 (random order)
+	set.Remove(2, 3)                   // 1, 5 (random order)
+	set.Contains(1)                    // true
+	set.Contains(1, 5)                 // true
+	set.Contains(1, 6)                 // false
+	_ = set.Values()                   // []int{5,1} (random order)
+	set.Clear()                        // empty
+	set.Empty()                        // true
+	set.Size()                         // 0
+}
+```
+
 ### Stacks
 
 A stack that represents a last-in-first-out (LIFO) data structure. The usual push and pop operations are provided, as well as a method to peek at the top item on the stack.
@@ -397,6 +528,50 @@ func main() {
 	stack.Clear()             // empty
 	stack.Empty()             // true
 	stack.Size()              // 0
+}
+```
+
+#### RedisStack
+
+A [stack](#stacks) based on a [redis list](#https://redis.io/commands#list).
+
+Implements [Stack](#stacks), interfaces.
+
+You can use this stack to expand your application to distributed.
+
+```go
+package main
+
+import (
+	"github.com/alicebob/miniredis/v2"
+	"github.com/go-redis/redis/v8"
+	"github.com/wanmail/gods/stacks/redistack"
+)
+
+// RedisStackExample to demonstrate basic usage of RedisStack
+func main() {
+	s, err := miniredis.Run()
+	if err != nil {
+		panic(err)
+	}
+	defer s.Close()
+	client := redis.NewClient(
+		&redis.Options{
+			Addr: s.Addr(),
+		},
+	)
+	stack := redistack.New(client, "RedisStack") // empty (keys are of type int)
+	stack.Push(1)                                // 1
+	stack.Push(2)                                // 1, 2
+	stack.Values()                               // 2, 1 (LIFO order)
+	_, _ = stack.Peek()                          // 2,true
+	_, _ = stack.Pop()                           // 2, true
+	_, _ = stack.Pop()                           // 1, true
+	_, _ = stack.Pop()                           // nil, false (nothing to pop)
+	stack.Push(1)                                // 1
+	stack.Clear()                                // empty
+	stack.Empty()                                // true
+	stack.Size()                                 // 0
 }
 ```
 
@@ -575,6 +750,50 @@ func main() {
 	m.Clear()            // empty
 	m.Empty()            // true
 	m.Size()             // 0
+}
+```
+
+#### RedisHashMap
+
+A [map](#maps) based on redis hash. 
+
+Implements [Map](#maps) interfaces.
+
+You can use this map to expand your application to distributed.
+
+```go
+package main
+
+import (
+	"github.com/alicebob/miniredis/v2"
+	"github.com/go-redis/redis/v8"
+	"github.com/wanmail/gods/maps/redismap"
+)
+
+// RedisMapExample to demonstrate basic usage of RedisMap
+func main() {
+	s, err := miniredis.Run()
+	if err != nil {
+		panic(err)
+	}
+	defer s.Close()
+	client := redis.NewClient(
+		&redis.Options{
+			Addr: s.Addr(),
+		},
+	)
+	m := redismap.New(client, "RedisSet") // empty (keys are of type int)
+	m.Put(1, "x")                         // 1->x
+	m.Put(2, "b")                         // 2->b, 1->x  (random order)
+	m.Put(1, "a")                         // 2->b, 1->a (random order)
+	_, _ = m.Get(2)                       // b, true
+	_, _ = m.Get(3)                       // nil, false
+	_ = m.Values()                        // []interface {}{"b", "a"} (random order)
+	_ = m.Keys()                          // []interface {}{1, 2} (random order)
+	m.Remove(1)                           // 2->b
+	m.Clear()                             // empty
+	m.Empty()                             // true
+	m.Size()                              // 0
 }
 ```
 
